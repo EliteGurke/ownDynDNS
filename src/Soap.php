@@ -85,6 +85,7 @@ class DomainWebserviceSoapClient{
 	/**
 	 * Incomming transfer a new domain for a fee.
 	 * This function is avaliable for domain resellers.
+	 * Transfers between netcup customers can result in addional costs for ownerchanges. See customer control panel.
 	 *
 	 * @param domainname $domainname Name of the domain including top-level domain.
 	 * @param positiveInteger $customernumber customer number of reseller at netcup.
@@ -289,7 +290,7 @@ class DomainWebserviceSoapClient{
 	 * @param telephone $telephone telephone number
 	 * @param email $email email address
 	 * @param clientrequestid $clientrequestid Id from client side. Can contain letters and numbers. Field is optional.
-	 * @param ArrayOfOptionalhandleattributes $optionalhandleattributes Optional handle attributes as array of Optionalhandleattribute. Please define in format for example: $optionalhandleattribute = new Optionalhandleattribute(); $optionalhandleattribute->item = 'state'; $optionalhandleattribute->value = utf8_encode("Bayern"); $optionalhandleattributes[] = $optionalhandleattribute; $optionalhandleattribute = new Optionalhandleattribute(); $optionalhandleattribute->item = 'handlecomment'; $optionalhandleattribute->value = utf8_encode("Important customer"); $optionalhandleattributes[] = $optionalhandleattribute; Possible values are: "fax" fax number in format +49.12345678, "state" max40chars state for example Sachsen, "handlecomment" max80chars comment for the handle. Value will not be transfered to any registry., "birthdate" dateformatyyyymmdd date of birth in format YYYY-MM-DD, "birthplace" max70chars place of birth, "birthcountrycountrycode" countrycode2char country of birth, "birthstate" max63chars state of birth, "birthplacepostalcode" max12chars place of the postcode, "registrationnumber" max70chars registernumber, "idcardnumber" max70chars passportnumber, "idcardissuedate" dateformatyyyymmdd passport date of issue in format YYYY-MM-DD, "idcardissueauthority" max70chars passport issuing authority, "taxnumber" max70chars tax number, "vatnumber" max70chars sales tax number, "aeroensid" max70chars aeroensid mandatory for .aero domains, "aeroenspassword" max70chars aeroenspassword mandatory for .aero domains, "xxxmemberid" max20chars xxxmemberid mandatory for .xxx domains, "xxxmemberpasswort" max20chars xxxmemberpasswort mandatory for .xxx domains, "proprofession" max70chars profession mandatory for .pro domains, "traveluin" max20chars traveluin mandatory for .travel domains, "trademarknumber" max80chars brandnumber, "trademarkcountrycode" countrycode2char registry place of the brand, "coopverificationcode" max20chars coopverificationcode, "asiatypeofentity" asiatypeofentity type of legal peronality mandatory for .asia domains. Allowed values are: naturalPerson, corporation, cooperative, partnership, government, politicalParty, society, institution, "asiaformofidentity" asiaformofidentity form of identity mandatory for .asia domains Allowed values are: certificate, legislation, passport, politicalPartyRegistry, societyRegistry, "asiaidentnumber" max255chars identificationnumber mandatory for .asia domains, "jobstitelposition" max70chars title or position mandatory for .jobs domains, "jobswebsite" url URL of website mandatory for .jobs domains, "jobsindustrytype" max128chars type of company mandatory for .jobs domains, "jobscontactisadmin" yesno Yes or No mandatory for .jobs domains, "jobsassociationmember" yesno Yes or No mandatory for .jobs domains, "esnumbertype" esnumbertype NIF/NIE/DNI-number type mandatory for .es domains, "esnifnienumber" max70chars NIF/NIE/DNI-number mandatory for .es domains
+	 * @param ArrayOfOptionalhandleattributes $optionalhandleattributes Optional handle attributes as array of Optionalhandleattribute. Please define in format for example: $optionalhandleattribute = new Optionalhandleattribute(); $optionalhandleattribute->item = 'state'; $optionalhandleattribute->value = utf8_encode("Bayern"); $optionalhandleattributes[] = $optionalhandleattribute; $optionalhandleattribute = new Optionalhandleattribute(); $optionalhandleattribute->item = 'handlecomment'; $optionalhandleattribute->value = utf8_encode("Important customer"); $optionalhandleattributes[] = $optionalhandleattribute; Possible values are: "fax" fax number in format +49.12345678, "state" max40chars state for example Sachsen, "handlecomment" max80chars comment for the handle. Value will not be transfered to any registry., "birthdate" dateformatyyyymmdd date of birth in format YYYY-MM-DD, "birthplace" max70chars place of birth, "birthcountrycountrycode" countrycode2char country of birth, "birthstate" max63chars state of birth, "birthplacepostalcode" max12chars place of the postcode, "registrationnumber" max70chars registernumber, "idcardnumber" max70chars passportnumber, "idcardissuedate" dateformatyyyymmdd passport date of issue in format YYYY-MM-DD, "idcardissueauthority" max70chars passport issuing authority, "taxnumber" max70chars tax number, "vatnumber" max70chars sales tax number, "aeroensid" max70chars aeroensid mandatory for .aero domains, "aeroenspassword" max70chars aeroenspassword mandatory for .aero domains, "xxxmemberid" max20chars xxxmemberid mandatory for .xxx domains, "xxxmemberpasswort" max20chars xxxmemberpasswort mandatory for .xxx domains, "proprofession" max70chars profession mandatory for .pro domains, "traveluin" max20chars traveluin mandatory for .travel domains, "trademarknumber" max80chars brandnumber, "trademarkcountrycode" countrycode2char registry place of the brand, "coopverificationcode" max20chars coopverificationcode, "asiatypeofentity" asiatypeofentity type of legal peronality mandatory for .asia domains. Allowed values are: naturalPerson, corporation, cooperative, partnership, government, politicalParty, society, institution, "asiaformofidentity" asiaformofidentity form of identity mandatory for .asia domains Allowed values are: certificate, legislation, passport, politicalPartyRegistry, societyRegistry, "asiaidentnumber" max255chars identificationnumber mandatory for .asia domains, "jobstitelposition" max70chars title or position mandatory for .jobs domains, "jobswebsite" url URL of website mandatory for .jobs domains, "jobsindustrytype" max128chars type of company mandatory for .jobs domains, "jobscontactisadmin" yesno Yes or No mandatory for .jobs domains, "jobsassociationmember" yesno Yes or No mandatory for .jobs domains, "esnumbertype" esnumbertype NIF/NIE/DNI-number type mandatory for .es domains, "esnifnienumber" max70chars NIF/NIE/DNI-number mandatory for .es domains, "uritemplate" uritemplate Contact for .de Domains that starts either with mailto:email@domain.tld or a URL to a contact form. You can add {Alabel} (ACE-String) or {Ulabel} (UTF-8-String) that contains domain name including top-level domain., "countryofcitizenshipcountrycode" countrycode2char country of countryofcitizenship
 	 * @return Responsemessage $responsemessage with information about result of the action like short and long resultmessages, message status, etc.
 	 */
 	public function updateHandle($customernumber,$apikey,$apisessionid,$handle_id,$type,$name,$organisation,$street,$postalcode,$city,$countrycode,$telephone,$email,$clientrequestid,$optionalhandleattributes){
@@ -315,7 +316,7 @@ class DomainWebserviceSoapClient{
 	 * @param telephone $telephone telephone number
 	 * @param email $email email address
 	 * @param clientrequestid $clientrequestid Id from client side. Can contain letters and numbers. Field is optional.
-	 * @param ArrayOfOptionalhandleattributes $optionalhandleattributes Optional handle attributes as array of Optionalhandleattribute. Please define in format for example: $optionalhandleattribute = new Optionalhandleattribute(); $optionalhandleattribute->item = 'state'; $optionalhandleattribute->value = utf8_encode("Bayern"); $optionalhandleattributes[] = $optionalhandleattribute; $optionalhandleattribute = new Optionalhandleattribute(); $optionalhandleattribute->item = 'handlecomment'; $optionalhandleattribute->value = utf8_encode("Important customer"); $optionalhandleattributes[] = $optionalhandleattribute; Possible values are: "fax" fax number in format +49.12345678, "state" max40chars state for example Sachsen, "handlecomment" max80chars comment for the handle. Value will not be transfered to any registry., "birthdate" dateformatyyyymmdd date of birth in format YYYY-MM-DD, "birthplace" max70chars place of birth, "birthcountrycountrycode" countrycode2char country of birth, "birthstate" max63chars state of birth, "birthplacepostalcode" max12chars place of the postcode, "registrationnumber" max70chars registernumber, "idcardnumber" max70chars passportnumber, "idcardissuedate" dateformatyyyymmdd passport date of issue in format YYYY-MM-DD, "idcardissueauthority" max70chars passport issuing authority, "taxnumber" max70chars tax number, "vatnumber" max70chars sales tax number, "aeroensid" max70chars aeroensid mandatory for .aero domains, "aeroenspassword" max70chars aeroenspassword mandatory for .aero domains, "xxxmemberid" max20chars xxxmemberid mandatory for .xxx domains, "xxxmemberpasswort" max20chars xxxmemberpasswort mandatory for .xxx domains, "proprofession" max70chars profession mandatory for .pro domains, "traveluin" max20chars traveluin mandatory for .travel domains, "trademarknumber" max80chars brandnumber, "trademarkcountrycode" countrycode2char registry place of the brand, "coopverificationcode" max20chars coopverificationcode, "asiatypeofentity" asiatypeofentity type of legal peronality mandatory for .asia domains. Allowed values are: naturalPerson, corporation, cooperative, partnership, government, politicalParty, society, institution, "asiaformofidentity" asiaformofidentity form of identity mandatory for .asia domains Allowed values are: certificate, legislation, passport, politicalPartyRegistry, societyRegistry, "asiaidentnumber" max255chars identificationnumber mandatory for .asia domains, "jobstitelposition" max70chars title or position mandatory for .jobs domains, "jobswebsite" url URL of website mandatory for .jobs domains, "jobsindustrytype" max128chars type of company mandatory for .jobs domains, "jobscontactisadmin" yesno Yes or No mandatory for .jobs domains, "jobsassociationmember" yesno Yes or No mandatory for .jobs domains, "esnumbertype" esnumbertype NIF/NIE/DNI-number type mandatory for .es domains, "esnifnienumber" max70chars NIF/NIE/DNI-number mandatory for .es domains
+	 * @param ArrayOfOptionalhandleattributes $optionalhandleattributes Optional handle attributes as array of Optionalhandleattribute. Please define in format for example: $optionalhandleattribute = new Optionalhandleattribute(); $optionalhandleattribute->item = 'state'; $optionalhandleattribute->value = utf8_encode("Bayern"); $optionalhandleattributes[] = $optionalhandleattribute; $optionalhandleattribute = new Optionalhandleattribute(); $optionalhandleattribute->item = 'handlecomment'; $optionalhandleattribute->value = utf8_encode("Important customer"); $optionalhandleattributes[] = $optionalhandleattribute; Possible values are: "fax" fax number in format +49.12345678, "state" max40chars state for example Sachsen, "handlecomment" max80chars comment for the handle. Value will not be transfered to any registry., "birthdate" dateformatyyyymmdd date of birth in format YYYY-MM-DD, "birthplace" max70chars place of birth, "birthcountrycountrycode" countrycode2char country of birth, "birthstate" max63chars state of birth, "birthplacepostalcode" max12chars place of the postcode, "registrationnumber" max70chars registernumber, "idcardnumber" max70chars passportnumber, "idcardissuedate" dateformatyyyymmdd passport date of issue in format YYYY-MM-DD, "idcardissueauthority" max70chars passport issuing authority, "taxnumber" max70chars tax number, "vatnumber" max70chars sales tax number, "aeroensid" max70chars aeroensid mandatory for .aero domains, "aeroenspassword" max70chars aeroenspassword mandatory for .aero domains, "xxxmemberid" max20chars xxxmemberid mandatory for .xxx domains, "xxxmemberpasswort" max20chars xxxmemberpasswort mandatory for .xxx domains, "proprofession" max70chars profession mandatory for .pro domains, "traveluin" max20chars traveluin mandatory for .travel domains, "trademarknumber" max80chars brandnumber, "trademarkcountrycode" countrycode2char registry place of the brand, "coopverificationcode" max20chars coopverificationcode, "asiatypeofentity" asiatypeofentity type of legal peronality mandatory for .asia domains. Allowed values are: naturalPerson, corporation, cooperative, partnership, government, politicalParty, society, institution, "asiaformofidentity" asiaformofidentity form of identity mandatory for .asia domains Allowed values are: certificate, legislation, passport, politicalPartyRegistry, societyRegistry, "asiaidentnumber" max255chars identificationnumber mandatory for .asia domains, "jobstitelposition" max70chars title or position mandatory for .jobs domains, "jobswebsite" url URL of website mandatory for .jobs domains, "jobsindustrytype" max128chars type of company mandatory for .jobs domains, "jobscontactisadmin" yesno Yes or No mandatory for .jobs domains, "jobsassociationmember" yesno Yes or No mandatory for .jobs domains, "esnumbertype" esnumbertype NIF/NIE/DNI-number type mandatory for .es domains, "esnifnienumber" max70chars NIF/NIE/DNI-number mandatory for .es domains, "uritemplate" uritemplate Contact for .de Domains that starts either with mailto:email@domain.tld or a URL to a contact form. You can add {Alabel} (ACE-String) or {Ulabel} (UTF-8-String) that contains domain name including top-level domain., "countryofcitizenshipcountrycode" countrycode2char country of countryofcitizenship
 	 * @return Responsemessage $responsemessage with information about result of the action like short and long resultmessages, message status, etc.
 	 */
 	public function createHandle($customernumber,$apikey,$apisessionid,$type,$name,$organisation,$street,$postalcode,$city,$countrycode,$telephone,$email,$clientrequestid,$optionalhandleattributes){
@@ -341,6 +342,7 @@ class DomainWebserviceSoapClient{
 	 * Current discounts are considered, but can be limited by time or amount.
 	 * Prices for premium domains can be higher.
 	 * This function is avaliable for domain resellers.
+	 * Transfers between netcup customers can result in addional costs for ownerchanges. See customer control panel.
 	 *
 	 * @param positiveInteger $customernumber customer number of reseller at netcup.
 	 * @param string $apikey Unique API key generated in customer control panel.
@@ -711,6 +713,8 @@ class DomainObject{
  * @pw_element string $zonec name Name of handle at registry.
  * @pw_element string $billingc name Name of handle at registry.
  * @pw_element string $onsitec name Name of handle at registry.
+ * @pw_element string $generalrequest name Name of handle at registry.
+ * @pw_element string $abusecontact name Name of handle at registry.
  * @pw_complex Registrycontacts
  */
 class Registrycontacts{
@@ -750,6 +754,18 @@ class Registrycontacts{
 	 * @var string
 	 */
 	public $onsitec;
+	/**
+	 * name Name of handle at registry.
+	 *
+	 * @var string
+	 */
+	public $generalrequest;
+	/**
+	 * name Name of handle at registry.
+	 *
+	 * @var string
+	 */
+	public $abusecontact;
 }
 
 
@@ -869,6 +885,7 @@ class HandleObject{
 
 
 
+
 /**
  * Handle Ids of contacts.
  *
@@ -878,6 +895,8 @@ class HandleObject{
  * @pw_element string $zonec Id of contact handle.
  * @pw_element string $billingc Id of contact handle.
  * @pw_element string $onsitec Id of contact handle.
+ * @pw_element string $generalrequest Id of contact handle.
+ * @pw_element string $abusecontact Id of contact handle.
  * @pw_complex Contactentries
  */
 class Contactentries{
@@ -917,6 +936,18 @@ class Contactentries{
 	 * @var string
 	 */
 	public $onsitec;
+	/**
+	 * Id of contact handle.
+	 *
+	 * @var string
+	 */
+	public $generalrequest;
+	/**
+	 * Id of contact handle.
+	 *
+	 * @var string
+	 */
+	public $abusecontact;
 }
 
 /**

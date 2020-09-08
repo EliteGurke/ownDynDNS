@@ -34,7 +34,7 @@ Self-hosted dynamic DNS php script to update netcup DNS API from Router like AVM
 
 ## References
 * DNS API Documentation: https://ccp.netcup.net/run/webservice/servers/endpoint.php
-* Source of dnsapi.php: https://ccp.netcup.net/run/webservice/servers/endpoint.php?PHPSOAPCLIENT
+* Source of Soap.php: https://ccp.netcup.net/run/webservice/servers/endpoint.php?PHPSOAPCLIENT
 
 ## License
 Published under GNU General Public License v3.0  
